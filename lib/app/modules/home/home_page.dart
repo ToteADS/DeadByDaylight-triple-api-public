@@ -11,7 +11,8 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends ModularState<HomePage, HomeStore> {
+class _HomePageState extends State<HomePage> {
+  final HomeStore store = Modular.get();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,12 +24,14 @@ class _HomePageState extends ModularState<HomePage, HomeStore> {
         onState: (_, counter) {
           return Padding(
             padding: EdgeInsets.all(10),
-            child: Text('$counter'),
+            child: Column(
+              children: [Text('$counter'), ElevatedButton(onPressed: () => Modular.to.pushNamed("/killers"), child: const Text("Killers"))],
+            ),
           );
         },
         onError: (context, error) => Center(
           child: Text(
-            'Too many clicks',
+            'Dead by Daylight API made by VooDoo',
             style: TextStyle(color: Colors.red),
           ),
         ),

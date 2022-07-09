@@ -10,7 +10,7 @@ import '../stores/killers_store.dart';
 
 class KillersPage extends StatefulWidget {
   final String title;
-  const KillersPage({Key? key, this.title = 'Killers Page'}) : super(key: key);
+  const KillersPage({Key? key, this.title = 'Killers'}) : super(key: key);
   @override
   KillersPageState createState() => KillersPageState();
 }

@@ -12,5 +12,4 @@ class AppModule extends Module {
     ModuleRoute(Modular.initialRoute, module: HomeModule()),
     ModuleRoute("/killers", module: KillersModule()),
   ];
-
 }
