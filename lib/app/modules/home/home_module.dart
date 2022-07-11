@@ -1,8 +1,8 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:modular_triple_bind/modular_triple_bind.dart';
-import '../home/home_store.dart';
+import 'presenter/stores/home_store.dart';
 
-import 'home_page.dart';
+import 'presenter/pages/home_page.dart';
 
 class HomeModule extends Module {
   @override
