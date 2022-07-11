@@ -14,7 +14,7 @@ class KillerRepository implements IKillerRepository {
     try {
       return await datasource.fetchAllKillers();
     } on Exception catch (_) {
-      throw FetchAllKillersError;
+      throw FetchAllKillersError();
     }
   }
 }
