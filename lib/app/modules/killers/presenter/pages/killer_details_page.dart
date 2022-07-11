@@ -28,7 +28,12 @@ class KillerDetailsPageState extends State<KillerDetailsPage> {
           SizedBox(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
-            child: Image.network(killer.icon?.shopBackground ?? CommonVariables.imageDeadByDaylightPattern, fit: BoxFit.cover),
+            child: FadeInImage.assetNetwork(
+                image: killer.icon?.shopBackground ?? CommonVariables.imageDeadByDaylightPattern,
+                placeholder: 'assets/images/grey-background.png',
+                fit: BoxFit.cover,
+                fadeInDuration: const Duration(seconds: 1),
+              ),
           ),
           SingleChildScrollView(
             child: Column(

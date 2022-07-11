@@ -10,8 +10,6 @@ class KillerCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   
-
     return Card(
       clipBehavior: Clip.antiAlias,
       child: Column(
@@ -19,8 +17,11 @@ class KillerCardWidget extends StatelessWidget {
           ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.transparent,
-              child: Image.network(
-                killer.icon?.portrait ?? CommonVariables.imageDeadByDaylightPattern,
+              child: FadeInImage.assetNetwork(
+                image: killer.icon?.portrait ?? CommonVariables.imageDeadByDaylightPattern,
+                placeholder: 'assets/images/grey-background.png',
+                fit: BoxFit.cover,
+                fadeInDuration: const Duration(seconds: 1),
               ),
             ),
             title: Text(killer.name ?? ""),
@@ -31,9 +32,11 @@ class KillerCardWidget extends StatelessWidget {
           ),
           SizedBox(
             height: 400,
-            child: Image.network(
-              killer.icon?.previewPortrait ?? CommonVariables.imageDeadByDaylightPattern,
+            child: FadeInImage.assetNetwork(
+              image: killer.icon?.previewPortrait ?? CommonVariables.imageDeadByDaylightPattern,
+              placeholder: 'assets/images/grey-background.png',
               fit: BoxFit.cover,
+              fadeInDuration: const Duration(seconds: 1),
             ),
           ),
           Padding(
