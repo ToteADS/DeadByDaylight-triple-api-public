@@ -11,20 +11,23 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 0,
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            image: const DecorationImage(
-                image: AssetImage(
-                  "assets/images/dead-by-daylight.png",
-                ),
-                fit: BoxFit.cover),
-          ),
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          image: const DecorationImage(
+              image: AssetImage(
+                "assets/images/dead-by-daylight.png",
+              ),
+              fit: BoxFit.cover),
+        ),
+        child: SingleChildScrollView(
           child: Column(
             children: [
+              const SizedBox(
+                height: 100,
+              ),
               ButtonOptionHomeCustomWidget(
                 imageAssets: "assets/images/killers.png",
                 title: "Killers",
@@ -39,6 +42,9 @@ class HomePage extends StatelessWidget {
                 imageAssets: "assets/images/perks.png",
                 title: "Perks",
                 onTap: () => Modular.to.pushNamed("/perks"),
+              ),
+              const SizedBox(
+                height: 100,
               ),
             ],
           ),
