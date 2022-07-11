@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class KillerInformationsCustomWidget extends StatelessWidget {
+class InformationsCharactersCustomWidget extends StatelessWidget {
   final String title;
   final String? description;
 
-  const KillerInformationsCustomWidget({Key? key, required this.title, required this.description}) : super(key: key);
+  const InformationsCharactersCustomWidget({Key? key, required this.title, required this.description}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

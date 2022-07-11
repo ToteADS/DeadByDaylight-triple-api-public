@@ -1,29 +1,22 @@
-import 'package:deadbydaylighttapp/app/core/common/common_variables.dart';
-import 'package:deadbydaylighttapp/app/entities/killer.dart';
 import 'package:deadbydaylighttapp/app/core/common/informations_characters_custom_widget.dart';
+import 'package:deadbydaylighttapp/app/entities/survivor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '../../../../core/common/common_variables.dart';
 import '../../../../core/common/get_perks_custom_widgets.dart';
 
-class KillerDetailsPage extends StatefulWidget {
-  const KillerDetailsPage({
-    Key? key,
-  }) : super(key: key);
-  @override
-  KillerDetailsPageState createState() => KillerDetailsPageState();
-}
+class SurvivorDetailsPage extends StatelessWidget {
+  const SurvivorDetailsPage({Key? key}) : super(key: key);
 
-class KillerDetailsPageState extends State<KillerDetailsPage> {
   @override
   Widget build(BuildContext context) {
-    final Killer killer = Modular.args.data as Killer;
+    final Survivor survivor = Modular.args.data as Survivor;
 
-    final List<String> perks = killer.perks ?? [];
-
+    final List<String> perksSurv = survivor.perks ?? [];
     return Scaffold(
       appBar: AppBar(
-        title: Text(killer.name ?? ""),
+        title: Text(survivor.name ?? ""),
       ),
       body: Stack(
         children: [
@@ -31,7 +24,7 @@ class KillerDetailsPageState extends State<KillerDetailsPage> {
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
             child: FadeInImage.assetNetwork(
-              image: killer.icon?.shopBackground ?? CommonVariables.imageDeadByDaylightPattern,
+              image: survivor.icon?.shopBackground ?? CommonVariables.imageDeadByDaylightPattern,
               placeholder: 'assets/images/grey-background.png',
               fit: BoxFit.cover,
               fadeInDuration: const Duration(seconds: 1),
@@ -41,17 +34,11 @@ class KillerDetailsPageState extends State<KillerDetailsPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                InformationsCharactersCustomWidget(title: "Name:", description: killer.name),
-                InformationsCharactersCustomWidget(title: "Full Name:", description: killer.fullName),
-                InformationsCharactersCustomWidget(title: "Nationality:", description: killer.nationality),
-                InformationsCharactersCustomWidget(title: "Realm:", description: killer.realm),
-                InformationsCharactersCustomWidget(title: "Power:", description: killer.power),
-                InformationsCharactersCustomWidget(title: "Weapon:", description: killer.weapon),
-                InformationsCharactersCustomWidget(title: "Speed:", description: killer.speed),
-                InformationsCharactersCustomWidget(title: "Terror Radius:", description: killer.terrorRadius),
-                InformationsCharactersCustomWidget(title: "Height:", description: killer.height),
-                InformationsCharactersCustomWidget(title: "Difficulty:", description: killer.difficulty),
-                InformationsCharactersCustomWidget(title: "lore:", description: killer.lore),
+                InformationsCharactersCustomWidget(title: "Name:", description: survivor.name),
+                InformationsCharactersCustomWidget(title: "Nationality:", description: survivor.nationality),
+                InformationsCharactersCustomWidget(title: "Role:", description: survivor.role),
+                InformationsCharactersCustomWidget(title: "Difficulty:", description: survivor.difficulty),
+                InformationsCharactersCustomWidget(title: "lore:", description: survivor.lore),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
                   child: Column(
@@ -78,7 +65,7 @@ class KillerDetailsPageState extends State<KillerDetailsPage> {
                           )),
                       Padding(
                         padding: const EdgeInsets.only(top: 5, left: 10),
-                        child: GetPerksCustomWidgets(perks: perks),
+                        child: GetPerksCustomWidgets(perks: perksSurv),
                       ),
                     ],
                   ),

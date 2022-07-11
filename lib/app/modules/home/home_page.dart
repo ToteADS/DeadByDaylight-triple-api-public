@@ -25,7 +25,11 @@ class _HomePageState extends State<HomePage> {
           return Padding(
             padding: EdgeInsets.all(10),
             child: Column(
-              children: [Text('$counter'), ElevatedButton(onPressed: () => Modular.to.pushNamed("/killers"), child: const Text("Killers"))],
+              children: [
+                Text('$counter'),
+                ElevatedButton(onPressed: () => Modular.to.pushNamed("/killers"), child: const Text("Killers")),
+                ElevatedButton(onPressed: () => Modular.to.pushNamed("/survivors"), child: const Text("survivors")),
+              ],
             ),
           );
         },

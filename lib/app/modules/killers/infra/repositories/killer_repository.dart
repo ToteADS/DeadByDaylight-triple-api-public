@@ -12,8 +12,7 @@ class KillerRepository implements IKillerRepository {
   @override
   Future<List<Killer>> fetchAllKillers() async {
     try {
-      var response = await datasource.fetchAllKillers();
-      return response;
+      return await datasource.fetchAllKillers();
     } on Exception catch (_) {
       throw FetchAllKillersError;
     }

@@ -9,8 +9,11 @@ class AppWidget extends StatelessWidget {
     return MaterialApp.router(
       routeInformationParser: Modular.routeInformationParser,
       routerDelegate: Modular.routerDelegate,
-      title: 'Flutter Slidy',
-      theme: ThemeData.dark(),
+      title: 'Dead By Daylight',
+      theme: ThemeData(
+        useMaterial3: true,
+        brightness: Brightness.dark,
+      ),
     );
   }
 }
