@@ -29,6 +29,7 @@ class _HomePageState extends State<HomePage> {
                 Text('$counter'),
                 ElevatedButton(onPressed: () => Modular.to.pushNamed("/killers"), child: const Text("Killers")),
                 ElevatedButton(onPressed: () => Modular.to.pushNamed("/survivors"), child: const Text("survivors")),
+                ElevatedButton(onPressed: () => Modular.to.pushNamed("/perks"), child: const Text("perks")),
               ],
             ),
           );

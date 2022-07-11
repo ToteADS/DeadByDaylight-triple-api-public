@@ -1,4 +1,3 @@
-import 'dart:convert';
 
 class Perk {
   final String? sId;
@@ -26,67 +25,20 @@ class Perk {
     this.icon,
   });
 
-  Map<String, dynamic> toMap() {
-    return {
-      'sId': sId,
-      'role': role,
-      'name': name,
-      'nameTag': nameTag,
-      'perkName': perkName,
-      'perkTag': perkTag,
-      'description': description,
-      'teachLevel': teachLevel,
-      'isPtb': isPtb,
-      'lang': lang,
-      'icon': icon,
-    };
-  }
-
   factory Perk.fromMap(Map<String, dynamic> map) {
     return Perk(
-      sId: map['sId'],
+      sId: map['_id'],
       role: map['role'],
       name: map['name'],
-      nameTag: map['nameTag'],
-      perkName: map['perkName'],
-      perkTag: map['perkTag'],
+      nameTag: map['name_tag'],
+      perkName: map['perk_name'],
+      perkTag: map['perk_tag'],
       description: map['description'],
-      teachLevel: map['teachLevel']?.toInt(),
-      isPtb: map['isPtb'],
+      teachLevel: map['teach_level']?.toInt(),
+      isPtb: map['is_ptb'],
       lang: map['lang'],
       icon: map['icon'],
     );
   }
 
-  String toJson() => json.encode(toMap());
-
-  factory Perk.fromJson(String source) => Perk.fromMap(json.decode(source));
-
-  Perk copyWith({
-    String? sId,
-    String? role,
-    String? name,
-    String? nameTag,
-    String? perkName,
-    String? perkTag,
-    String? description,
-    int? teachLevel,
-    bool? isPtb,
-    String? lang,
-    String? icon,
-  }) {
-    return Perk(
-      sId: sId ?? this.sId,
-      role: role ?? this.role,
-      name: name ?? this.name,
-      nameTag: nameTag ?? this.nameTag,
-      perkName: perkName ?? this.perkName,
-      perkTag: perkTag ?? this.perkTag,
-      description: description ?? this.description,
-      teachLevel: teachLevel ?? this.teachLevel,
-      isPtb: isPtb ?? this.isPtb,
-      lang: lang ?? this.lang,
-      icon: icon ?? this.icon,
-    );
-  }
 }
