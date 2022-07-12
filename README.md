@@ -1,16 +1,6 @@
-# deadbydaylighttapp
+# DeadByDaylight ApiPublic Demo
 
-A new Flutter project.
+App demonstrativo em Flutter buscando informações da Api publica do Dead By Daylight (JOGO) ( https://dearvoodoo.github.io/DBD-API/ )
 
-## Getting Started
+Demo app in Flutter fetching information from the Dead By Daylight (GAME) public API (https://dearvoodoo.github.io/DBD-API/)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
